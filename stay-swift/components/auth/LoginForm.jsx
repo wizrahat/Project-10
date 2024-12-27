@@ -2,12 +2,12 @@ const LoginForm = () => {
   return (
     <form className="login-form">
       <div>
-        <label htmlhtmlFor="email">Email Address</label>
+        <label htmlFor="email">Email Address</label>
         <input type="email" name="email" id="email" />
       </div>
 
       <div>
-        <label htmlhtmlFor="password">Password</label>
+        <label htmlFor="password">Password</label>
         <input type="password" name="password" id="password" />
       </div>
 
