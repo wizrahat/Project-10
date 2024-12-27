@@ -6,7 +6,7 @@ const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
   title: "StaySwift",
-  description: "One Stop Place for Hospitability",
+  description: "One Place Stop for Hospitability",
 };
 
 export default async function RootLayout({ children }) {
@@ -15,7 +15,9 @@ export default async function RootLayout({ children }) {
     <html lang="en">
       <body className={inter.className}>
         <Navbar sideMenu={true} />
-        <main>{children}</main>
+        <main>
+          {children}
+        </main>
       </body>
     </html>
   );

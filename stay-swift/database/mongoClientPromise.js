@@ -1,6 +1,8 @@
-import { MongoClient } from "mongodb";
+import { MongoClient } from 'mongodb';
 
-var _mongomongoClientPromise;
+
+ var _mongomongoClientPromise;
+
 
 if (!process.env.MONGODB_CONNECTION_STRING) {
   throw new Error(
@@ -14,7 +16,7 @@ const options = {};
 let client;
 let mongoClientPromise;
 
-if (process.env.ENVIRONMENT === "development") {
+if (process.env.ENVIRONMENT === 'development') {
   // In development mode, use a global variable so that the value
   // is preserved across module reloads caused by HMR (Hot Module Replacement).
   if (!global._mongomongoClientPromise) {
