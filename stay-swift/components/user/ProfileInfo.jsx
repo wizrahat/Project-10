@@ -1,28 +1,28 @@
-import { auth } from "@/auth";
 import Image from "next/image";
+import { auth } from "@/auth";
 
 const ProfileInfo = async () => {
   const session = await auth();
+
   return (
     <div className="flex flex-col items-center py-8 text-center">
       <div className="relative max-h-[180px] max-w-[180px] rounded-full lg:mb-8 h-[100px] w-[100px] bg-orange-600 grid place-items-center text-4xl text-white">
-        {session?.user?.image ? (
+       {
+        session?.user?.image ? (
           <Image
             src={session?.user?.image}
-            alt="profile"
-            width={100}
-            height={100}
-            className="rounded-full"
-          />
+            alt={session?.user?.name}
+            width={90}
+            height={90}
+            className="rounded-full"/>
         ) : (
-          session?.user?.name.charAt(0).toUpperCase()
-        )}
+          session?.user?.name.charAt(0)?.toUpperCase()
+        )
+       }
       </div>
 
       <div>
-        <h3 className="text-2xl font-semibold lg:text-[28px]">
-          {session?.user?.name}
-        </h3>
+        <h3 className="text-2xl font-semibold lg:text-[28px]">{session?.user?.name}</h3>
         <p className="leading-[231%] lg:text-lg">{session?.user?.email}</p>
       </div>
 

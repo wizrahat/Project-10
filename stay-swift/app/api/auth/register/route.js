@@ -1,12 +1,12 @@
 import { userModel } from "@/models/user-model";
-import { dbConnect } from "@/service/momgo";
+import { dbConnect } from "@/service/mongo";
 import bcrypt from "bcryptjs";
 import { NextRequest, NextResponse } from "next/server";
 
 export const POST = async (request) => {
   const { fname, lname, email, password } = await request.json();
 
-  console.log(fname, lname, email, password);
+  // console.log(fname, lname, email, password);
 
   await dbConnect();
 
@@ -18,7 +18,7 @@ export const POST = async (request) => {
     password: hashedPassword,
   };
 
-  console.log(newUser);
+  // console.log(newUser);
 
   try {
     await userModel.create(newUser);

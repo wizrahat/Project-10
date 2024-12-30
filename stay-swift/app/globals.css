@@ -36,7 +36,11 @@
   }
 
   .btn-primary {
-    @apply bg-primary px-8 py-2 rounded-md block text-white font-bold shadow-lg hover:shadow-primary/50 active:scale-95 transition-all;
+    @apply bg-primary px-8 py-2 rounded-md block text-white font-bold shadow-lg   transition-all;
+  }
+
+  .btn-disabled {
+    @apply bg-gray-500 bg-opacity-50 px-8 py-2 rounded-md block text-white font-bold shadow-lg cursor-default;
   }
 
   #searchParams {
@@ -56,7 +60,7 @@
   }
 
   .login-form {
-    @apply flex flex-col my-6;
+    @apply flex flex-col mb-6 -mt-2;
   }
 
   .login-form div {
@@ -68,6 +72,10 @@
   }
 
   input[type="checkbox"] {
-    @apply mx-1
+    @apply mx-1;
+  }
+
+  button:disabled {
+    @apply bg-opacity-80 cursor-default;
   }
 }
